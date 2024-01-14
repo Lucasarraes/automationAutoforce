@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20240113 17:07:42.790" rpa="false" schemaversion="4">
+<suite id="s1" name="Dealer" source="C:\Users\User\OneDrive\Desktop\AutoForce\tests\dealer.robot">
+<test id="s1-t1" name="Cenarios de testes" line="6">
+<kw name="Abrir o Navegador" library="dealer">
+<kw name="New Browser" library="Browser">
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20240113 17:07:43.500" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "ignoreDefaultArgs": false, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\User\\OneDrive\\Desktop\\AutoForce\\browser\\traces\\16858865-0562-41fd-aa7c-506bfd9a858b"}</msg>
+<msg timestamp="20240113 17:07:43.910" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"ignoreDefaultArgs":false,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\User\\OneDrive\\Desktop\\AutoForce\\browser\\traces\\16858865-0562-41fd-aa7c-506bfd9a858b"}</msg>
+<status status="PASS" starttime="20240113 17:07:43.494" endtime="20240113 17:07:43.910"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>ignoreHTTPSErrors=${True}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240113 17:07:43.915" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": "",
+  "ignoreHTTPSErrors": true,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg timestamp="20240113 17:07:43.948" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240113 17:07:43.948" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': '', 'ignoreHTTPSErrors': True, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<status status="PASS" starttime="20240113 17:07:43.910" endtime="20240113 17:07:43.948"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>url=${SITE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240113 17:07:49.613" level="INFO">Successfully initialized new page object and opened url: https://testes.autoforce.com.br/dealer-bmw-desafio/</msg>
+<status status="PASS" starttime="20240113 17:07:43.948" endtime="20240113 17:07:49.613"/>
+</kw>
+<status status="PASS" starttime="20240113 17:07:43.494" endtime="20240113 17:07:49.613"/>
+</kw>
+<kw name="Listar opções ao clicar no botão Telefone" library="dealer">
+<kw name="Click" library="Browser">
+<arg>css=div.header__phones-container button.button--primary</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:07:49.720" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:07:49.614" endtime="20240113 17:07:51.767"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=div#header-card-phones &gt; div:nth-child(2)</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:07:51.829" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:07:51.767" endtime="20240113 17:07:53.879"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=div#phone-content-1 &gt; ul &gt; li:nth-child(3) &gt; a &gt; span &gt; span</arg>
+<arg>contains</arg>
+<arg>(11) 00000-0000</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:07:55.962" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:07:55.962" level="INFO">Text: '(11) 00000-0000'</msg>
+<status status="PASS" starttime="20240113 17:07:53.880" endtime="20240113 17:07:55.962"/>
+</kw>
+<status status="PASS" starttime="20240113 17:07:49.614" endtime="20240113 17:07:55.962"/>
+</kw>
+<kw name="Listar opções ao clicar no botão WhatsApp" library="dealer">
+<kw name="Click" library="Browser">
+<arg>css=body &gt; div &gt; div &gt; header &gt; div.container &gt; div.header-desktop.d-none.d-md-block &gt; div &gt; div.header__navbar-item.header__phones &gt; div:nth-child(3) &gt; button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:07:56.006" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:07:55.963" endtime="20240113 17:07:58.038"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=div#header-card-whatsapp</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:07:58.087" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:07:58.038" endtime="20240113 17:08:00.135"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=div#wpp-content-0 &gt; ul &gt; li &gt; a &gt; span</arg>
+<arg>contains</arg>
+<arg>+55 (84) 99999-9999</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:02.202" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:08:02.202" level="INFO">Text: '+55 (84) 99999-9999'</msg>
+<status status="PASS" starttime="20240113 17:08:00.135" endtime="20240113 17:08:02.202"/>
+</kw>
+<status status="PASS" starttime="20240113 17:07:55.963" endtime="20240113 17:08:02.202"/>
+</kw>
+<kw name="Exibir endereço e horário de funcionamento" library="dealer">
+<kw name="Click" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__units.footer-land__units--desktop.d-none.d-md-block &gt; div &gt; div &gt; div.row.footer-land-units__content-row.active &gt; div:nth-child(1) &gt; h2:nth-child(1)</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:02.251" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:08:02.203" endtime="20240113 17:08:04.300"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__units.footer-land__units--desktop.d-none.d-md-block &gt; div &gt; div &gt; div.row.footer-land-units__content-row.active &gt; div:nth-child(1) &gt; h2:nth-child(1)</arg>
+<arg>contains</arg>
+<arg>ENDEREÇO:</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:06.365" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:08:06.365" level="INFO">Text: 'ENDEREÇO:'</msg>
+<status status="PASS" starttime="20240113 17:08:04.300" endtime="20240113 17:08:06.365"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__units.footer-land__units--desktop.d-none.d-md-block &gt; div &gt; div &gt; div.row.footer-land-units__content-row.active &gt; div:nth-child(2) &gt; h2:nth-child(1)</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:06.415" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:08:06.365" endtime="20240113 17:08:08.464"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__units.footer-land__units--desktop.d-none.d-md-block &gt; div &gt; div &gt; div.row.footer-land-units__content-row.active &gt; div:nth-child(2) &gt; h2:nth-child(1)</arg>
+<arg>contains</arg>
+<arg>HORÁRIOS DE FUNCIONAMENTO:</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:10.526" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:08:10.526" level="INFO">Text: 'HORÁRIOS DE FUNCIONAMENTO:'</msg>
+<status status="PASS" starttime="20240113 17:08:08.464" endtime="20240113 17:08:10.526"/>
+</kw>
+<status status="PASS" starttime="20240113 17:08:02.203" endtime="20240113 17:08:10.526"/>
+</kw>
+<kw name="Exibir os dados institucionais da matriz" library="dealer">
+<kw name="Click" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__info &gt; div &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; strong</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:10.562" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:08:10.527" endtime="20240113 17:08:12.593"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__info &gt; div &gt; div:nth-child(1) &gt; div:nth-child(1) &gt; strong</arg>
+<arg>contains</arg>
+<arg>CNPJ:</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:14.658" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:08:14.658" level="INFO">Text: 'CNPJ:'</msg>
+<status status="PASS" starttime="20240113 17:08:12.593" endtime="20240113 17:08:14.658"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__info &gt; div &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; strong</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:14.693" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:08:14.658" endtime="20240113 17:08:16.723"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__info &gt; div &gt; div:nth-child(1) &gt; div:nth-child(2) &gt; strong</arg>
+<arg>contains</arg>
+<arg>Razão Social:</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:18.789" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:08:18.789" level="INFO">Text: 'Razão Social:'</msg>
+<status status="PASS" starttime="20240113 17:08:16.723" endtime="20240113 17:08:18.789"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__info &gt; div &gt; div:nth-child(2) &gt; div &gt; strong</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:18.841" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:08:18.789" endtime="20240113 17:08:20.888"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=footer &gt; div &gt; div.footer-land__info &gt; div &gt; div:nth-child(2) &gt; div &gt; strong</arg>
+<arg>contains</arg>
+<arg>Endereço Matriz:</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:22.953" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:08:22.953" level="INFO">Text: 'Endereço Matriz:'</msg>
+<status status="PASS" starttime="20240113 17:08:20.888" endtime="20240113 17:08:22.953"/>
+</kw>
+<status status="PASS" starttime="20240113 17:08:10.527" endtime="20240113 17:08:22.953"/>
+</kw>
+<kw name="Clicar no botão &quot;Saiba mais&quot; de um card de oferta" library="dealer">
+<kw name="Click" library="Browser">
+<arg>css=body &gt; div &gt; div &gt; section.section-component.list-vehicles-land &gt; div &gt; div &gt; div:nth-child(1) &gt; a &gt; div &gt; button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:22.989" level="INFO">Highlighted 1 elements for 2000.</msg>
+<status status="PASS" starttime="20240113 17:08:22.953" endtime="20240113 17:08:25.902"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=form#conversion-from-new-model &gt; header &gt; div &gt; h2</arg>
+<arg>contains</arg>
+<arg>Estou Interessado</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240113 17:08:29.037" level="INFO">Highlighted 1 elements for 2000.</msg>
+<msg timestamp="20240113 17:08:29.037" level="INFO">Text: 'Estou Interessado'</msg>
+<status status="PASS" starttime="20240113 17:08:25.903" endtime="20240113 17:08:29.037"/>
+</kw>
+<status status="PASS" starttime="20240113 17:08:22.953" endtime="20240113 17:08:29.037"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240113 17:08:32.037" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240113 17:08:29.037" endtime="20240113 17:08:32.037"/>
+</kw>
+<status status="PASS" starttime="20240113 17:07:43.491" endtime="20240113 17:08:32.038"/>
+</test>
+<status status="PASS" starttime="20240113 17:07:42.791" endtime="20240113 17:08:37.097"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Dealer">Dealer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
